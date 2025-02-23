@@ -1,0 +1,23 @@
+#define LDR_PIN A0  // LDR connected to analog pin A0
+#define RELAY_PIN 7  // Relay module connected to digital pin 7
+
+void setup() {
+    pinMode(RELAY_PIN, OUTPUT);
+    Serial.begin(9600);  // Initialize serial monitor
+}
+
+void loop() {
+    int ldrValue = analogRead(LDR_PIN);  // Read LDR sensor value
+    Serial.print("LDR Value: ");
+    Serial.println(ldrValue);  // Display sensor value in Serial Monitor
+
+    if (ldrValue < 500) {  // Adjust threshold based on ambient light
+        digitalWrite(RELAY_PIN, HIGH); // Turn ON the street light
+        Serial.println("Street Light ON");
+    } else {
+        digitalWrite(RELAY_PIN, LOW); // Turn OFF the street light
+        Serial.println("Street Light OFF");
+    }
+
+    delay(1000); // Delay for stability
+}
