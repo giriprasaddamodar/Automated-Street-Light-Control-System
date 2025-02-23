@@ -1,22 +1,28 @@
 
-Image: Circuit diagram showing an LDR connected to an Arduino's analog pin (A0) in a voltage divider circuit with a fixed resistor, the output from the Arduino is fed to a comparator circuit which then triggers a relay module connected to digital pin D7, which in turn controls an LED/bulb.]
+* Image: Circuit diagram showing an LDR connected to an Arduino's analog pin (A0) in a voltage divider circuit with a fixed resistor, the output from the Arduino is fed to a comparator circuit which then triggers a relay module connected to digital pin D7, which in turn controls an LED/bulb.]
+
 Circuit Explanation:
-LDR and Voltage Divider:
+
+* LDR and Voltage Divider:
 The LDR is placed in series with a fixed resistor, creating a voltage divider circuit. When light hits the LDR, its resistance decreases, causing a change in the voltage across the divider circuit. 
-Arduino Analog Read:
+
+* Arduino Analog Read:
 The voltage from the voltage divider is read by the Arduino's analog pin (A0). This analog value represents the current light intensity. 
-Threshold Comparison:
+
+* Threshold Comparison:
 The Arduino code compares the analog reading to a pre-set threshold value. If the reading falls below the threshold (meaning darkness), it triggers the relay. 
-Relay Activation:
+* Relay Activation:
 When the threshold is crossed, the Arduino sets the digital pin (D7) to HIGH, activating the relay module. 
-Light Control:
+* Light Control:
 The relay module is connected to the LED/bulb, so when activated by the Arduino, it switches the light on. 
-Key points:
-Light Dependent Behavior:
+* Key points:
+** Light Dependent Behavior:
 As light intensity increases, the LDR's resistance decreases, resulting in a higher voltage at the Arduino's analog pin. 
-Threshold Setting:
+** Threshold Setting:
 The threshold value in the code determines the sensitivity of the light detection. 
-Relay Function:
+** Relay Function:
 The relay acts as a switch, allowing the Arduino to control a higher power circuit like a light bulb. 
-Applications:
+
+
+* Applications:
 Automatic night lights, Street lighting with dusk-to-dawn functionality, and Light-activated sensors in robotics. 
